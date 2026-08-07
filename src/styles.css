@@ -1,0 +1,503 @@
+:root {
+  --msft-red: #e30613;
+  --msft-red-dark: #b9040f;
+  --ink: #111116;
+  --muted: #5f6368;
+  --line: #d8d8d8;
+  --paper: #ffffff;
+  --soft: #f7f7f7;
+  --soft-red: #fff5f5;
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: linear-gradient(135deg, #f4f4f4, #ffffff 42%, #f0f0f0);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-shell {
+  width: min(1400px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.care-plan-card {
+  background: var(--paper);
+  border: 5px solid var(--msft-red);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.document-header {
+  display: grid;
+  grid-template-columns: minmax(260px, 500px) 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+.logo-panel {
+  border: 2px solid var(--msft-red);
+  padding: 8px;
+  background: #fff;
+}
+
+.logo-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.title-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 18px;
+  text-align: right;
+}
+
+.title-icon {
+  color: var(--msft-red);
+  margin-bottom: 8px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--msft-red);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title-panel h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.toolbar-note {
+  max-width: 640px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.completion {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 10px;
+}
+
+.section-title.compact-title {
+  margin: 0 0 10px;
+}
+
+.section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 0 14px 14px 0;
+  background: var(--msft-red);
+  color: white;
+  font-weight: 800;
+}
+
+.section-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border-radius: 50%;
+  background: var(--msft-red);
+  color: white;
+}
+
+.section-title h2 {
+  margin: 0;
+  color: var(--msft-red);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.section-intro {
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  margin-bottom: 18px;
+}
+
+.field {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  min-height: 46px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.field:nth-child(even) {
+  border-right: 0;
+}
+
+.field.wide {
+  grid-column: span 2;
+  border-right: 0;
+}
+
+.field span {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: #fbfbfb;
+  font-weight: 700;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+}
+
+.field input {
+  min-height: 45px;
+  border: 0;
+  border-radius: 0;
+  padding: 8px 10px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--msft-red);
+  box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.14);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: linear-gradient(180deg, #fff, #fbfbfb);
+}
+
+textarea {
+  min-height: 132px;
+  resize: vertical;
+  padding: 10px;
+  line-height: 1.35;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.domain-table {
+  min-width: 1280px;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  vertical-align: top;
+}
+
+thead th {
+  background: var(--msft-red);
+  color: white;
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.domain-table thead th:nth-child(1) { width: 17%; }
+.domain-table thead th:nth-child(2) { width: 20%; }
+.domain-table thead th:nth-child(3) { width: 22%; }
+.domain-table thead th:nth-child(4) { width: 19%; }
+.domain-table thead th:nth-child(5) { width: 10%; }
+.domain-table thead th:nth-child(6) { width: 12%; }
+
+tbody th {
+  padding: 10px;
+  text-align: left;
+  font-weight: 800;
+  background: #fbfbfb;
+  line-height: 1.3;
+}
+
+td input,
+td textarea {
+  min-height: 44px;
+  border: 0;
+  border-radius: 0;
+}
+
+.table-textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.lower-panels {
+  margin-top: 18px;
+}
+
+.review-grid {
+  max-width: 950px;
+}
+
+.submit-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  padding: 16px;
+  border: 2px solid var(--msft-red);
+  border-radius: 14px;
+  background: var(--soft-red);
+}
+
+.submit-panel p {
+  flex: 1 1 420px;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: var(--msft-red);
+  color: #fff;
+  font-weight: 800;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-1px);
+  background: var(--msft-red-dark);
+}
+
+.submit-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.submit-message {
+  flex-basis: 100%;
+  color: var(--msft-red-dark);
+  font-weight: 700;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.52);
+}
+
+.app-modal {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: min(82vh, 760px);
+  overflow-y: auto;
+  border: 4px solid var(--msft-red);
+  border-radius: 18px;
+  background: #fff;
+  padding: 26px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+.app-modal h2 {
+  margin: 8px 0 10px;
+  color: var(--msft-red);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.app-modal p {
+  line-height: 1.45;
+}
+
+.app-modal ul {
+  margin: 16px 0 0;
+  padding-left: 22px;
+}
+
+.app-modal li {
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: #f2f2f2;
+  color: var(--ink);
+}
+
+.warning-icon {
+  color: var(--msft-red);
+}
+
+.success-icon {
+  color: #14672b;
+}
+
+.blackboard-code {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 16px;
+  border: 2px solid var(--msft-red);
+  border-radius: 12px;
+  background: var(--soft-red);
+  font-weight: 800;
+}
+
+.blackboard-code strong {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 1.35rem;
+  letter-spacing: 0.16em;
+  color: var(--msft-red);
+}
+
+.modal-reminder {
+  padding: 12px;
+  border-left: 5px solid var(--msft-red);
+  background: var(--soft-red);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .document-header,
+  .two-column,
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title-panel {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .field,
+  .field:nth-child(even),
+  .field.wide {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    border-right: 0;
+  }
+
+  .field span {
+    padding: 10px 12px 2px;
+  }
+
+  .care-plan-card {
+    padding: 14px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page-shell {
+    width: 100%;
+    padding: 0;
+  }
+
+  .care-plan-card {
+    box-shadow: none;
+    border-width: 3px;
+    padding: 12mm;
+  }
+
+  input,
+  textarea {
+    box-shadow: none !important;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  .panel,
+  .details-grid,
+  tr {
+    break-inside: avoid;
+  }
+}
